@@ -1,0 +1,10 @@
+InputStream report = getClass()
+        .getResourceAsStream("/reportes/reporte_productos.jasper");
+
+JasperPrint print = JasperFillManager.fillReport(
+        report,
+        new HashMap<>(),
+        Conexion.getConexion()
+);
+
+JasperViewer.viewReport(print, false);
